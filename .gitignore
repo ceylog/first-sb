@@ -1,6 +1,10 @@
 .gradle
+.DS_Store
+Thumbs.db
 build/
-
+.idea/
+*.iml
+*.ipr
 # Ignore Gradle GUI config
 gradle-app.setting
 

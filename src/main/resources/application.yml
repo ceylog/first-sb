@@ -1,0 +1,30 @@
+# Server settings (ServerProperties)
+server:
+  port: 8080
+  address: 127.0.0.1
+  sessionTimeout: 30
+  contextPath: /
+
+
+spring:
+
+  thymeleaf:
+    cache: false
+  datasource:
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/spring_boot
+    username: root
+    password: mysqlroot
+
+  jpa:
+    database: mysql
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+      naming:
+        strategy: org.hibernate.cfg.ImprovedNamingStrategy
+
+
+  redis:
+    port: 6379
+    host: localhost

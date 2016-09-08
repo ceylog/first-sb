@@ -1,0 +1,62 @@
+buildscript {
+	ext {
+		springBootVersion = '1.4.0.RELEASE'
+		springLoadedVersion = '1.2.4.RELEASE'
+	}
+	repositories {
+		mavenLocal()
+		mavenCentral()
+		maven { url "http://repo.spring.io/release" }
+		maven { url "http://repo.spring.io/milestone" }
+		maven { url "http://repo.spring.io/snapshot" }
+	}
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+		classpath("org.springframework:springloaded:${springLoadedVersion}")
+	}
+}
+
+apply plugin: 'java'
+apply plugin: "idea"
+apply plugin: 'spring-boot'
+
+springBoot {
+	classifier = 'exec'
+}
+
+jar {
+	baseName = 'first-sb'
+	version = '0.0.1-SNAPSHOT'
+}
+
+
+repositories {
+	mavenLocal()
+	mavenCentral()
+	maven { url "http://repo.spring.io/release" }
+	maven { url "http://repo.spring.io/milestone" }
+	maven { url "http://repo.spring.io/snapshot" }
+}
+
+ext['thymeleaf.version'] = '3.0.1.RELEASE'
+ext['thymeleaf-layout-dialect.version'] = '2.0.1'
+ext['swagger2.version'] = '2.5.0'
+
+dependencies {
+
+	compile('org.springframework.boot:spring-boot-starter-thymeleaf'){
+		exclude module: 'thymeleaf'
+		exclude module: 'thymeleaf-spring4'
+		exclude module:'thymeleaf-layout-dialect'
+	}
+	compile group: 'org.thymeleaf', name: 'thymeleaf-spring4', version: property('thymeleaf.version')
+	compile group: 'org.thymeleaf', name: 'thymeleaf', version: property('thymeleaf.version')
+	compile group: 'nz.net.ultraq.thymeleaf', name: 'thymeleaf-layout-dialect', version: property('thymeleaf-layout-dialect.version')
+	compile group: 'io.springfox', name: 'springfox-swagger2', version: property('swagger2.version')
+	compile group: 'io.springfox', name: 'springfox-swagger-ui', version: property('swagger2.version')
+	compile 'org.springframework.boot:spring-boot-starter-data-jpa'
+	compile 'mysql:mysql-connector-java'
+	compile 'org.springframework.boot:spring-boot-starter-redis'
+	compile("org.springframework.boot:spring-boot-devtools")
+	testCompile('org.springframework.boot:spring-boot-starter-test')
+}
