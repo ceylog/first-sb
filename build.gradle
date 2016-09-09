@@ -55,6 +55,8 @@ dependencies {
 	compile group: 'io.springfox', name: 'springfox-swagger2', version: property('swagger2.version')
 	compile group: 'io.springfox', name: 'springfox-swagger-ui', version: property('swagger2.version')
 	compile 'org.springframework.boot:spring-boot-starter-data-jpa'
+	compile 'com.squareup.retrofit2:converter-gson:2.1.0'
+    compile 'org.projectlombok:lombok:1.16.10'
 	compile 'mysql:mysql-connector-java'
 	compile 'org.springframework.boot:spring-boot-starter-redis'
 	compile("org.springframework.boot:spring-boot-devtools")

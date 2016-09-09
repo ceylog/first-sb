@@ -6,6 +6,21 @@
 </head>
 <body>
 <h1 th:text="${host}">Hello World</h1>
+<table>
+    <tr>
+        <th>userName</th>
+        <th>email</th>
+        <th>status</th>
+    </tr>
+    <tbody>
+        <tr th:each="user: ${users}">
+            <td th:text="${user.userName}">Oranges</td>
+            <td th:text="${user.email}">Oranges</td>
+            <td th:text="${user.status}">Oranges</td>
+        </tr>
+    </tbody>
+</table>
+
 <image th:src="@{/images/Albert-Einstein.jpg}" alt="Albert-Einstein"></image>
 </body>
 </html>

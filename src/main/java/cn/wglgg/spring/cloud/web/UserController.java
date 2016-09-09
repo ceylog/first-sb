@@ -16,7 +16,7 @@ import java.util.List;
  * Created by gang on 9/9/16.
  */
 @RestController
-@RequestMapping("/api/user")
+@RequestMapping("/v1/api/user")
 @Api("user相关api")
 public class UserController {
 
