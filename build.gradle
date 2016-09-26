@@ -41,22 +41,26 @@ repositories {
 ext['thymeleaf.version'] = '3.0.1.RELEASE'
 ext['thymeleaf-layout-dialect.version'] = '2.0.1'
 ext['swagger2.version'] = '2.5.0'
+ext['shiro.version'] = '1.3.2'
 
 dependencies {
 
 	compile('org.springframework.boot:spring-boot-starter-thymeleaf'){
 		exclude module: 'thymeleaf'
 		exclude module: 'thymeleaf-spring4'
-		exclude module:'thymeleaf-layout-dialect'
+		exclude module: 'thymeleaf-layout-dialect'
 	}
 	compile group: 'org.thymeleaf', name: 'thymeleaf-spring4', version: property('thymeleaf.version')
 	compile group: 'org.thymeleaf', name: 'thymeleaf', version: property('thymeleaf.version')
 	compile group: 'nz.net.ultraq.thymeleaf', name: 'thymeleaf-layout-dialect', version: property('thymeleaf-layout-dialect.version')
 	compile group: 'io.springfox', name: 'springfox-swagger2', version: property('swagger2.version')
 	compile group: 'io.springfox', name: 'springfox-swagger-ui', version: property('swagger2.version')
+	compile group: 'org.apache.shiro', name: 'shiro-spring', version: property('shiro.version')
 	compile 'org.springframework.boot:spring-boot-starter-data-jpa'
 	compile 'com.squareup.retrofit2:converter-gson:2.1.0'
     compile 'org.projectlombok:lombok:1.16.10'
+
+    compile 'com.ibeetl:beetlsql:2.6.1'
 	compile 'mysql:mysql-connector-java'
 	compile 'org.springframework.boot:spring-boot-starter-redis'
 	compile("org.springframework.boot:spring-boot-devtools")

@@ -23,7 +23,6 @@ spring:
       naming:
         strategy: org.hibernate.cfg.ImprovedNamingStrategy
 
-
   redis:
     port: 6379
     host: localhost
@@ -37,7 +36,6 @@ spring:
   profiles: dev
   thymeleaf:
     cache: false
-
 
 ---
 server:
